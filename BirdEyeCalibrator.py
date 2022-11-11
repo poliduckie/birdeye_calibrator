@@ -106,6 +106,9 @@ counter = 0
 # The mouse coordinates
 coord = [0, 0]
 
+# The computed Matrix
+Matrix = [[]]
+
 # Source image
 image = cv2.imread(IMAGE_SRC)
 
@@ -146,7 +149,6 @@ while(keepGoing):
 
     # Coputes and save the perspective transform
     Matrix = computeTransform()
-    pickle.dump(Matrix, open(PICKLE_DST, 'wb'))
 
     tranformedImaged = transformImage(image, Matrix)
     newImage = np.concatenate((disp, tranformedImaged), axis=1)
@@ -160,3 +162,6 @@ while(keepGoing):
         break
 
 cv2.destroyAllWindows()
+
+# Save the Matrix
+pickle.dump(Matrix, open(PICKLE_DST, 'wb'))
