@@ -81,7 +81,7 @@ def transformImage(img, Matrix):
     return cv2.warpPerspective(img, Matrix, img.shape[:2][::-1])
 
 
-IMAGE_SRC = './Source.png'
+IMAGE_SRC = './b.png'
 PICKLE_DST = './BirdEyeMatrix.pkl'
 
 CIRCLE_RADIUS = 10
@@ -125,7 +125,7 @@ setuped = False
 
 selected = -1
 
-while(counter < 8 and keepGoing):
+while (counter < 8 and keepGoing):
     # A copy of the dotted image to display the preview of the new dot
     disp = dotted_image.copy()
 
@@ -143,7 +143,7 @@ while(counter < 8 and keepGoing):
 
 setuped = True
 
-while(keepGoing):
+while (keepGoing):
     disp = dotted_image.copy()
     drawDots(disp)
 
